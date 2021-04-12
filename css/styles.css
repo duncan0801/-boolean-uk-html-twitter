@@ -142,6 +142,8 @@ main .home {
     border-left: solid 1px rgba(224, 224, 224, 0.637);
     border-bottom: solid 1px rgba(224, 224, 224, 0.637);
     border-right: solid 1px rgba(224, 224, 224, 0.637);
+
+    height: 58px;
 }
 
 main .home .svg-container {
@@ -250,7 +252,7 @@ main .home .svg-container {
 
 /* MIDDLE SECTION  */
 
-article {
+main article {
     font-size: 17px;
     display: grid;
     grid-template:
@@ -335,6 +337,17 @@ aside {
 }
 
 /* RIGHT SECTION - SEARCH */
+.search-bar-container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
+    background-color: white;
+}
+
+.search-container svg {
+    width: 28px;
+}
 
 .search {
     display: grid;
@@ -367,45 +380,70 @@ aside {
 
     background-color: rgba(224, 224, 224);
 
-    color: #a9a9a9;
+    color: #f7f9fa;
 
-    font-size: 12px;
+    font-size: 22px;
 }
 
 /* RIGHT SECTION - HAPPENING  */
-.happening article .title {
-    grid-area: title;
+
+.happening {
+    background-color: #f7f9fa;
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
 }
-.happening article .sub-heading {
+
+.card .sub-heading {
     grid-area: sub-heading;
 }
-.happening article .main {
+.card .main {
     grid-area: main;
 }
-.happening article .image {
+.card .image {
     grid-area: image;
 }
-.happening article .footer {
+.card .footer {
     grid-area: footer;
 }
-.happening article {
+.card {
     display: grid;
     grid-template:
-        "title image" auto
         "sub-heading image" auto
         "main image" auto
         "footer image" auto /
-        auto
+        auto auto
         40px;
 }
 
 .happening article .image {
-    width: 100x;
-    height: 50px;
+    width: 75px;
+    height: 75px;
+
+    border-radius: 10px;
 
     overflow: hidden;
-    object-fit: contain;
 }
 
-.happening article .image img {
+.card .image img {
+    width: 150%;
+    position: relative;
+    right: 30px;
+    object-fit: cover;
+}
+
+.dot-container {
+    align-text: center;
+}
+
+/* RIGHT SECTION - HAPPENING - ARTICLES*/
+
+article .title h2 {
+    padding-top: 20px;
+
+    border-bottom: solid 1px #d5d6d6;
+
+    font-size: 22px;
+    font-weight: 900;
 }
