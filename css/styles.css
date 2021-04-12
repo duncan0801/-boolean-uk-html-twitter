@@ -128,6 +128,7 @@ aside {
 }
 
 /* MIDDLE SECTION */
+
 .top {
     display: grid;
     grid-template-rows: auto auto;
@@ -220,34 +221,80 @@ aside {
 
 /* MIDDLE SECTION - NEWS FEED */
 article {
-    font-size: 12px;
+    font-size: 11px;
     display: grid;
     grid-template:
         "picture header" auto
         "picture content" auto/
-        auto auto;
+        60px auto;
+
+    padding: 10px;
+
+    border-left: lightgray;
+    border-bottom: lightgray;
+    border-right: rgb(36, 28, 28);
 }
 
 .news-feed article .picture {
     grid-area: picture;
+    display: grid;
+    justify-items: center;
+
+    padding: 10px;
+}
+
+.news-feed article .profile-pic-container {
+    width: 37px;
+    height: 37px;
 }
 .news-feed article .header {
     grid-area: header;
+
+    display: grid;
+    grid-template-columns: auto auto auto 4fr;
+    align-items: center;
+    margin-bottom: 1em;
+    margin-right: 0.5em;
+
+    grid-gap: 5px;
+}
+.header .options {
+    display: grid;
+    justify-items: right;
 }
 .news-feed article .content {
     grid-area: content;
 }
 
 .features {
+    margin-top: 1em;
     display: grid;
     grid-template-columns: repeat(4, auto);
 }
-
+.features-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
 .feature svg {
-    width: 17px;
+    width: 15px;
 }
 
-article .header .options {
+article .header .options img {
     width: 12px;
     transform: rotate(90deg);
+}
+
+.header .username {
+    font-weight: 700;
+}
+
+.header .handle,
+.header .time {
+    color: grey;
+}
+
+.feature-number {
+    font-size: 10px;
+    color: grey;
 }
