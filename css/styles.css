@@ -2,21 +2,187 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+:root {
+    --twitter-blue: rgba(29, 161, 242, 1);
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* PAGE LAYOUT */
+body {
+    display: grid;
+    grid-template:
+        ". left-nav main right ." 100vh /
+        1fr 249px 500px 4fr 1fr;
+}
+
+nav {
+    grid-area: left-nav;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: right;
 }
 
 /* LEFT NAV */
+.button {
+    display: grid;
+    align-items: center;
+}
 .button svg {
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    margin-left: 15px;
 }
 .left-menu-container {
     height: 100vh;
-    width: 400px;
+    width: 249px;
+
+    padding-left: 14px;
+    padding-right: 14px;
+
+    font-size: 15px;
 
     display: grid;
-    grid-template-rows: 6fr 1fr 3fr;
+    grid-template-rows: 0.7fr auto;
+    justify-items: right;
 }
 
 .left-menu-container section {
     border: 1px solid black;
+    display: grid;
+}
+
+.icons {
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.link-name {
+    font-weight: bolder;
+}
+
+.icons a svg {
+    margin-right: 15px;
+}
+
+.icons .container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+
+    font-size: 15px;
+
+    margin-right: 40px;
+}
+/* LEFT NAV - TWEET BUTTON */
+.left-menu-container a.tweet {
+    text-justify: center;
+    text-align: center;
+
+    color: white;
+    background-color: var(--twitter-blue);
+    border-radius: 30px;
+
+    width: 100%;
+    height: 36px;
+}
+
+/* LEFT NAV - ACCOUNT SECTION */
+.left-menu-container .account {
+    display: grid;
+
+    grid-template-columns: repeat(3, auto);
+
+    place-items: end;
+
+    font-size: 13px;
+}
+
+.left-menu-container div {
+    margin: 0px;
+}
+
+.profile-pic-container {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-pic-container img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.left-menu-container .account .options {
+    height: 30px;
+
+    transform: rotate(90deg);
+}
+
+/* MIDDLE SECTION */
+.top {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+    border: 1px lightgrey solid;
+}
+
+/* MIDDLE SECTION - HOME BAR */
+
+.top .home {
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+
+    align-content: center;
+
+    padding: 10px 7px;
+    border-bottom: 1px lightgrey solid;
+}
+.top-tweets {
+    width: 20px;
+}
+.home h2 {
+    font-size: 15px;
+    font-weight: 900;
+}
+
+/* MIDDLE SECTION - PROFILE PIC & ICONS */
+.top .profile-pic-container {
+    transform: scale(1.2);
+}
+.icons-and-send svg {
+    width: 20px;
+}
+.write-something .profile-pic-container {
+    grid-area: profile-pic;
+}
+.write-something .input {
+    grid-area: input;
+}
+
+.write-something .icons-and-send {
+    grid-area: icons;
+}
+
+.write-something {
+    display: grid;
+    grid-template:
+        "profile-pic input" 2fr
+        "profile-pic icons" 1fr/
+        60px 1fr;
+}
+
+.top .home svg {
+    color: var(--twitter-blue);
 }
