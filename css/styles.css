@@ -25,7 +25,9 @@ body {
 
 nav {
     grid-area: left-nav;
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 main {
